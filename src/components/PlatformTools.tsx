@@ -61,11 +61,9 @@ export default function PlatformTools() {
   return (
     <section className="max-w-7xl mx-auto p-4 py-12 relative">
       <div>
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
-          <h2 className="text-4xl font-bold mb-2">Platform & Tools</h2>
-          <p className="text-lg text-primary/80">
-            The tools and tech I use every day to bring ideas to life.
-          </p>
+        <div className="text-center max-w-3xl mx-auto mb-8 space-y-2">
+          <h2 className="text-3xl font-bold mb-2">Platform & Tools</h2>
+         
         </div>
       </div>
 

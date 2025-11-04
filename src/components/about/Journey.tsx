@@ -54,11 +54,11 @@ const jourenyData = [
 
 export default function Journey() {
   return (
-    <section id="experience" className="max-w-7xl mx-auto px-4 py-12 relative">
+    <section id="journey" className="max-w-7xl mx-auto px-4 py-12 relative">
       <div>
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
           <h2 className="text-4xl font-bold mb-2">My Journey</h2>
-          <p className="text-lg text-primary/80">
+          <p className="text-lg text-secondary-foreground">
             Every milestone tells a story of growth, passion, and purpose that
             shaped who I am.
           </p>
@@ -73,7 +73,7 @@ export default function Journey() {
                 <div className="hidden md:block relative">
                   <div
                     className={cn(
-                      "w-4 h-4 mt-2 rounded-full z-10 bg-background absolute",
+                      "w-4 h-4 mt-2 rounded-full z-10 bg-background absolute"
                     )}
                   />
                   <div
@@ -86,21 +86,19 @@ export default function Journey() {
 
                 <div className="flex items-start gap-4 flex-1">
                   <div className="col-span-1 flex md:justify-start">
-                    <div className="bg-muted rounded-lg p-3 flex items-center justify-center text-primary">
+                    <div className="bg-secondary rounded-lg p-3 flex items-center justify-center text-primary">
                       {data.icon}
                     </div>
                   </div>
 
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1 w-full">
-                      <h3 className="text-base font-semibold">
-                        {data.title}
-                      </h3>
+                      <h3 className="text-base font-semibold">{data.title}</h3>
                       <span className="text-sm text-muted-foreground">
                         {data.period}
                       </span>
                     </div>
-                    <p className="text-primary/80 font-normal">
+                    <p className="text-secondary-foreground font-normal">
                       {data.company}
                     </p>
                   </div>

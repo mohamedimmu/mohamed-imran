@@ -8,7 +8,7 @@ export default function ContactInfo() {
       </h4>
       <div className="space-y-4">
         <a
-          className="flex items-start gap-3 text-sm hover:text-primary transition-colors"
+          className="flex items-start gap-3 text-sm text-secondary-foreground hover:text-primary transition-colors"
           href="mailto:mohamedimran1130@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -17,7 +17,7 @@ export default function ContactInfo() {
           <span>mohamedimran1130@gmail.com</span>
         </a>
         <a
-          className="flex items-start gap-3 text-sm hover:text-primary transition-colors"
+          className="flex items-start gap-3 text-sm text-secondary-foreground hover:text-primary transition-colors"
           href="tel:+971585708789"
           target="_blank"
           rel="noopener noreferrer"
@@ -26,7 +26,7 @@ export default function ContactInfo() {
           <span className="">+91 - 8838121213</span>
         </a>
         <div className="flex items-start gap-3 text-sm">
-          <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground" />
+          <MapPin className="h-4 w-4 mt-0.5 text-secondary-foreground" />
           <span className="text-foreground">Chennai, India</span>
         </div>
       </div>

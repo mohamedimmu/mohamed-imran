@@ -27,7 +27,7 @@ export default function ProfileCard() {
           className="text-2xl font-extrabold tracking-tight text-foreground cursor-pointer"
           gapClassName="ml-[0.5]"
         />
-        <p className="text-sm text-muted-foreground">Full-Stack Developer & AI Engineer</p>
+        <p className="text-sm text-secondary-foreground">Full-Stack Developer & AI Engineer</p>
       </div>
 
       <Separator className="w-full h-0.5 my-4 bg-foreground/5" />
