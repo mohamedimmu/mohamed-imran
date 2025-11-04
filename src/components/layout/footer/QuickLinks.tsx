@@ -13,7 +13,7 @@ export default function QuickLinks() {
           <li key={link.label}>
             <Link
               href={link.href}
-              className="text-sm hover:text-primary transition-colors inline-flex items-center gap-2 group"
+              className="text-sm text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-2 group"
             >
               {link.label}
               <span className="opacity-0 group-hover:opacity-100 transition-opacity">

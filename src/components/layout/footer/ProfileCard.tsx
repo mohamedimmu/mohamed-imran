@@ -24,7 +24,7 @@ export default function ProfileCard() {
             { initial: "", rest: " " }, // optional spacer if you want a wider gap
             { initial: "I", rest: "mran" },
           ]}
-          className="text-2xl font-extrabold tracking-tight text-primary cursor-pointer"
+          className="text-2xl font-extrabold tracking-tight text-foreground cursor-pointer"
           gapClassName="ml-[0.5]"
         />
         <p className="text-sm text-muted-foreground">Full-Stack Developer & AI Engineer</p>

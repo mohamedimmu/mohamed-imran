@@ -7,24 +7,24 @@ export default function ContactInfo() {
         Contact
       </h4>
       <div className="space-y-4">
-        <div className="flex items-start gap-3 text-sm">
-          <Mail className="h-4 w-4 mt-0.5 text-muted-foreground" />
-          <a
-            href="mailto:mohamedimran1130@gmail.com"
-            className="hover:text-primary transition-colors"
-          >
-            mohamedimran1130@gmail.com
-          </a>
-        </div>
-        <div className="flex items-start gap-3 text-sm">
-          <Phone className="h-4 w-4 mt-0.5 text-muted-foreground" />
-          <a
-            href="tel:+971585708789"
-            className="hover:text-primary transition-colors"
-          >
-            +91 - 8838121213
-          </a>
-        </div>
+        <a
+          className="flex items-start gap-3 text-sm hover:text-primary transition-colors"
+          href="mailto:mohamedimran1130@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Mail className="h-4 w-4 mt-0.5" />
+          <span>mohamedimran1130@gmail.com</span>
+        </a>
+        <a
+          className="flex items-start gap-3 text-sm hover:text-primary transition-colors"
+          href="tel:+971585708789"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Phone className="h-4 w-4 mt-0.5" />
+          <span className="">+91 - 8838121213</span>
+        </a>
         <div className="flex items-start gap-3 text-sm">
           <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground" />
           <span className="text-foreground">Chennai, India</span>

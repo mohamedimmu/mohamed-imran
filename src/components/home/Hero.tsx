@@ -6,31 +6,31 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[calc(100vh-96px)] flex items-center justify-center overflow-y-auto"
     >
       <div className="max-w-7xl mx-auto px-4 py-12 relative">
         <div className="max-w-4xl mx-auto text-center animate-slide-up">
           <StatusBadge status="available" className="mb-8" />
 
-          <p className="text-base sm:text-lg md:text-xl text-foreground max-w-2xl mx-auto mb-2">
+          <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto mb-2">
             👋 Hi, I&apos;m Mohamed Imran
           </p>
 
-          <h1 className="text-2xl xxs:text-[30px] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground">
             Full Stack Developer <br /> & AI Engineer
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-foreground max-w-2xl mx-auto my-3 xxs:my-4 md:my-6">
+          <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto my-6">
             I design and build modern, scalable digital products that help
             startups and enterprises transform complex challenges into seamless
             solutions.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <Button size="lg" className="gap-2 glow-primary">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <Button size="lg" className="gap-2 glow-primary w-full sm:w-auto">
               View My Work <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto">
               Let&apos;s Connect
             </Button>
           </div>

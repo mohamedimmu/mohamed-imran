@@ -19,7 +19,7 @@ export default function BotttomBar() {
 
           <Button
             onClick={scrollToTop}
-            className="flex items-center gap-3 text-sm group cursor-pointer"
+            className="flex items-center gap-3 text-sm group cursor-pointer hover:bg-transparent"
             aria-label="Back to top"
             variant="ghost"
           >

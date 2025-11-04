@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,7 @@ export default function Newsletter() {
   const [status, setStatus] = useState<"success" | "error" | "idle">("idle");
   const [message, setMessage] = useState("");
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     setStatus("idle");
     setMessage("");
@@ -47,7 +48,7 @@ export default function Newsletter() {
         Subscribe to my notes
       </h2>
 
-      <p className="text-muted-foreground mb-6">
+      <p className="text-foreground/80 mb-6">
         Short notes on what I&apos;m reading, building, and learning.
       </p>
 

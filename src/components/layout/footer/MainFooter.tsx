@@ -14,7 +14,7 @@ export default function MainFooter() {
     <section className="py-8 md:py-12 max-w-7xl mx-auto px-4">
       <div className="">
         <div className="mb-24 space-y-2">
-          <p className="text-muted-foreground">Have a project in mind?</p>
+          <p className="text-foreground/80">Have a project in mind?</p>
 
           <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
             Let&apos;s Build Something Great Together
