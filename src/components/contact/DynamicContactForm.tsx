@@ -28,10 +28,10 @@ import { contactSchema } from "@/lib/validators";
 import { HiringForm } from "./HiringForm";
 import { FreelanceForm } from "./FreelanceForm";
 import { GeneralForm } from "./GeneralForm";
+import { saveFormData } from "@/wix-api/saveFormData";
 
 const DynamicContactForm = () => {
   const [isSuccess, setIsSuccess] = useState(false);
-  const [file, setFile] = useState<File | null>(null);
 
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
@@ -79,15 +79,33 @@ const DynamicContactForm = () => {
         submitData.append(key, JSON.stringify(value));
       }
     });
-    if (file) {
-      submitData.append("file", file);
-    }
 
-    // Mock submission with delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("Form submitted:", Object.fromEntries(submitData));
-    setIsSuccess(true);
-    toast.success("Your message has been sent successfully!");
+    const { name, email, message, purpose } = data;
+    const formId =
+      purpose === "general"
+        ? "General"
+        : purpose === "hiring"
+        ? "Hiring"
+        : "Freelance";
+
+    const formData: Record<string, string> =
+      data.purpose === "general"
+        ? {
+            ...(name ? { name } : {}),
+            ...(email ? { email } : {}),
+            ...(message ? { message } : {}),
+          }
+        : {};
+    try {
+      const response = await saveFormData(formId, { name, email, message });
+      if (response.success) {
+        toast.success("Thanks for reaching out! I'll get back to you soon.");
+      }
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      form.reset();
+    }
   };
 
   const getSubmitButtonText = () => {
@@ -109,7 +127,6 @@ const DynamicContactForm = () => {
             onClick={() => {
               setIsSuccess(false);
               form.reset();
-              setFile(null);
             }}
             variant="outline"
           >
@@ -150,7 +167,7 @@ const DynamicContactForm = () => {
                     <SelectValue placeholder="Select a purpose" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent >
+                <SelectContent>
                   <SelectItem value="hiring">Hiring as Employee</SelectItem>
                   <SelectItem value="freelance">
                     Freelance Opportunity

@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { Clock } from "./Clock";
 import { Globe } from "@/components/ui/globe";
-import HoverRevealText from "@/components/HoverRevealText";
 import { Separator } from "@radix-ui/react-separator";
 
 export default function ProfileCard() {
@@ -18,16 +17,12 @@ export default function ProfileCard() {
     <div className="relative h-64 w-full overflow-hidden rounded-2xl flex flex-col">
       {/* Top section — time info */}
       <div className="">
-        <HoverRevealText
-          parts={[
-            { initial: "M", rest: "ohamed" },
-            { initial: "", rest: " " }, // optional spacer if you want a wider gap
-            { initial: "I", rest: "mran" },
-          ]}
-          className="text-2xl font-extrabold tracking-tight text-foreground cursor-pointer"
-          gapClassName="ml-[0.5]"
-        />
-        <p className="text-sm text-secondary-foreground">Full-Stack Developer & AI Engineer</p>
+        <h2 className="text-2xl font-extrabold tracking-tight text-foreground cursor-pointer">
+          MI
+        </h2>
+        <p className="text-sm text-secondary-foreground">
+          Full-Stack Developer & AI Engineer
+        </p>
       </div>
 
       <Separator className="w-full h-0.5 my-4 bg-foreground/5" />

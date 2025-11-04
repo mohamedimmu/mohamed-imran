@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
-import { PlayCircle, Users, Zap, TrendingUp } from "lucide-react";
+import { Users, Zap, TrendingUp } from "lucide-react";
 
 /**
  * Provide file paths from /public/workshop (example):
@@ -80,46 +80,32 @@ export default function Workshops() {
                 key={file}
                 className="break-inside-avoid overflow-hidden rounded-lg shadow-lg"
               >
-                <PhotoView
-                  src={file}
-                  render={
-                    video
-                      ? ({ scale, rotate }) => (
-                          <video
-                            src={file}
-                            controls
-                            autoPlay
-                            muted
-                            className="w-full h-full object-contain"
-                            style={{
-                              transform: `scale(${scale}) rotate(${rotate}deg)`,
-                            }}
-                          />
-                        )
-                      : undefined
-                  }
-                >
-                  <button
-                    className="relative block w-full cursor-pointer focus:outline-none group"
-                    aria-label={`View workshop highlight ${idx + 1}`}
-                  >
-                    <Image
-                      unoptimized
-                      src={video ? "/images/workshop/1.JPG" : file}
-                      alt={`Workshop highlight ${idx + 1}${
-                        video ? " (video)" : ""
-                      }`}
-                      width={1000}
-                      height={700}
-                      className="w-full h-auto object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-                    />
-                    {video && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-300 group-hover:bg-black/50">
-                        <PlayCircle className="h-16 w-16 text-white/80 transform transition-transform duration-300 group-hover:scale-110" />
-                      </div>
-                    )}
-                  </button>
-                </PhotoView>
+                {video ? (
+                  <video
+                    src={file}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-auto object-cover"
+                  />
+                ) : (
+                  <PhotoView src={file}>
+                    <button
+                      className="relative block w-full cursor-pointer focus:outline-none group"
+                      aria-label={`View workshop highlight ${idx + 1}`}
+                    >
+                      <Image
+                        unoptimized
+                        src={file}
+                        alt={`Workshop highlight ${idx + 1}`}
+                        width={1000}
+                        height={700}
+                        className="w-full h-auto object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      />
+                    </button>
+                  </PhotoView>
+                )}
               </div>
             );
           })}

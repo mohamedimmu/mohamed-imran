@@ -5,6 +5,7 @@ import Experience from "@/components/Experience";
 import Expertise from "@/components/Expertise";
 import HowCanIHelp from "@/components/HowCanIHelpYou";
 import PlatformTools from "@/components/PlatformTools";
+import Playlist from "@/components/Playlist";
 import Skills from "@/components/Skills";
 import Workshops from "@/components/Workshops";
 
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <Education />
       <Workshops />
       <HowCanIHelp />
+      <Playlist />
     </div>
   );
 }

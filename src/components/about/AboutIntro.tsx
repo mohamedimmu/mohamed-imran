@@ -63,7 +63,7 @@ export default function AboutIntro() {
         <div className="text-center p-4 border-2 rounded-lg">
           <div className="text-3xl font-bold text-primary">300+</div>
           <div className="text-sm text-foreground/80 mt-1">
-            Businesses Trained
+            Business Owners Trained
           </div>
         </div>
       </div>

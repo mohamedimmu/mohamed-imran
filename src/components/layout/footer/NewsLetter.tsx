@@ -1,44 +1,67 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { handleSubscriptionRequest } from "@/wix-api/handleSubscription";
+import { toast } from "sonner";
 
 interface IFormInput {
   email: string;
 }
 
 export default function Newsletter() {
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [message, setMessage] = useState<string | null>(null);
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<IFormInput>();
-  const [status, setStatus] = useState<"success" | "error" | "idle">("idle");
-  const [message, setMessage] = useState("");
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+  useEffect(() => {
+    if (status === "success" || status === "error") {
+      const timer = setTimeout(() => {
+        setStatus("idle");
+        setMessage(null);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
+  const onSubmit: SubmitHandler<IFormInput> = async (data: IFormInput) => {
     setStatus("idle");
-    setMessage("");
-
+    setMessage(null);
     try {
-      // Simulate network request
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // On successful submission
-      setStatus("success");
-      setMessage(
-        "Thanks — you're subscribed! Check your inbox for a confirmation."
-      );
-      reset(); // Reset form fields
-    } catch (error) {
-      console.error(error);
+      const response = await handleSubscriptionRequest(data.email);
+      if (response.status === 200) {
+        setStatus("success");
+        setMessage(response.message);
+        toast.success("You're in!", {
+          description:
+            "hanks for subscribing! I'll keep you posted on new notes and updates.",
+        });
+      } else {
+        setStatus("error");
+        setMessage(response.message);
+        toast.error(
+          response.message || "Something went wrong. Please try again."
+        );
+      }
+    } catch (error: unknown) {
       setStatus("error");
-      setMessage("Something went wrong. Please try again later.");
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.";
+      setMessage(errorMessage);
+      toast.error(errorMessage);
+    } finally {
+      reset();
     }
   };
 
@@ -95,12 +118,12 @@ export default function Newsletter() {
             {errors.email.message}
           </p>
         )}
-        {status === "success" && (
+        {status === "success" && message && (
           <p role="status" className="text-sm text-green-600">
             {message}
           </p>
         )}
-        {status === "error" && !errors.email && (
+        {status === "error" && message && !errors.email && (
           <p role="alert" className="text-sm text-red-600">
             {message}
           </p>
