@@ -1,15 +1,15 @@
 "use server";
 
-import { getWixServerClient } from "@/lib/wix-client-server";
+import { getWixAdminClient } from "@/lib/wix-client-admin";
 
 export async function saveFormData(
   formId: string,
-  formData: Record<string, string>
+  formData: Record<string, string | number>
 ) {
-  const wixClient = await getWixServerClient();
+  const wixClient = getWixAdminClient();
   try {
     console.log(formId, formData);
-    const savedItem = await wixClient.items.save(formId, formData)
+    const savedItem = await wixClient.items.save(formId, formData);
     return {
       success: true,
       data: savedItem,

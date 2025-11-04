@@ -43,14 +43,8 @@ export default function Newsletter() {
         setMessage(response.message);
         toast.success("You're in!", {
           description:
-            "hanks for subscribing! I'll keep you posted on new notes and updates.",
+            "Thanks for subscribing! I'll keep you posted on new notes and updates.",
         });
-      } else {
-        setStatus("error");
-        setMessage(response.message);
-        toast.error(
-          response.message || "Something went wrong. Please try again."
-        );
       }
     } catch (error: unknown) {
       setStatus("error");

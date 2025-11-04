@@ -1,10 +1,19 @@
 "use server";
 
-import { getWixServerClient } from "@/lib/wix-client-server";
+import { getWixAdminClient } from "@/lib/wix-client-admin";
 import { contacts } from "@wix/crm";
 
-export async function createContactForSubscription(emailAddress: string) {
-  const wixClient = await getWixServerClient();
+// Define a consistent return type
+interface CreateContactResponse {
+  status: "success" | "error";
+  message?: string;
+  contact?: contacts.Contact;
+}
+
+export async function createContactForSubscription(
+  emailAddress: string
+): Promise<CreateContactResponse> {
+  const wixClient = getWixAdminClient();
   const contactInfo: contacts.ContactInfo = {
     emails: {
       items: [
@@ -18,9 +27,25 @@ export async function createContactForSubscription(emailAddress: string) {
   };
 
   try {
-    const newContact = await wixClient.contacts.createContact(contactInfo);
-    return newContact;
-  } catch (error) {
-    console.error(error);
+    const createContactResponse = await wixClient.contacts.createContact(contactInfo);
+    return {
+      status: "success",
+      contact: createContactResponse.contact,
+      message: "Contact created successfully.",
+    };
+  } catch (error: unknown) {
+    console.error("Error creating contact for subscription:", error);
+
+    let errorMessage = "Failed to create contact.";
+    if ((error as { details?: { applicationError?: { code: string } } }).details?.applicationError?.code === "CONTACT_ALREADY_EXISTS") {
+      errorMessage = "Contact with this email already exists.";
+    } else if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+
+    return {
+      status: "error",
+      message: errorMessage,
+    };
   }
 }

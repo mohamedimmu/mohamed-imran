@@ -1,5 +1,4 @@
 import { env } from "@/env";
-import { members } from "@wix/members";
 import { createClient, OAuthStrategy, Tokens } from "@wix/sdk";
 import { contacts } from "@wix/crm";
 import { items } from "@wix/data";
@@ -10,7 +9,6 @@ export function getWixClient(tokens: Tokens | undefined) {
   return createClient({
     modules: {
       files,
-      members,
       contacts,
       items,
       emailSubscriptions,

@@ -32,7 +32,7 @@ export async function middleware(request: NextRequest) {
   // Modifies the response that goes back to the client
   response.cookies.set(WIX_SESSION_COOKIE, JSON.stringify(sessionTokens), {
     maxAge: 60 * 60 * 24 * 14,
-    secure: true,
+    // secure: true,
     //Need to fix it
     // secure: process.env.NODE_ENV === "production",
   });

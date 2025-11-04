@@ -80,7 +80,23 @@ const DynamicContactForm = () => {
       }
     });
 
-    const { name, email, message, purpose } = data;
+    const {
+      name,
+      email,
+      message,
+      purpose,
+      company,
+      positionTitle,
+      jobDescription,
+      employmentType,
+      salaryRange,
+      startDate,
+      projectTitle,
+      projectDescription,
+      budget,
+      timeline,
+      deliverables,
+    } = data;
     const formId =
       purpose === "general"
         ? "General"
@@ -95,9 +111,31 @@ const DynamicContactForm = () => {
             ...(email ? { email } : {}),
             ...(message ? { message } : {}),
           }
-        : {};
+        : data.purpose === "hiring"
+        ? {
+            ...(name ? { name } : {}),
+            ...(email ? { email } : {}),
+            ...(company ? { company } : {}),
+            ...(positionTitle ? { positionTitle } : {}),
+            ...(jobDescription ? { jobDescription } : {}),
+            ...(employmentType ? { employmentType } : {}),
+            ...(salaryRange ? { salaryRange } : {}),
+            ...(startDate ? { startDate } : {}),
+            ...(message ? { message } : {}),
+          }
+        : {
+            ...(name ? { name } : {}),
+            ...(email ? { email } : {}),
+            ...(projectTitle ? { projectTitle } : {}),
+            ...(projectDescription ? { projectDescription } : {}),
+            ...(budget ? { budget } : {}),
+            ...(timeline ? { timeline } : {}),
+            ...(deliverables ? { deliverables } : {}),
+            ...(message ? { message } : {}),
+          };
+
     try {
-      const response = await saveFormData(formId, { name, email, message });
+      const response = await saveFormData(formId, formData);
       if (response.success) {
         toast.success("Thanks for reaching out! I'll get back to you soon.");
       }
