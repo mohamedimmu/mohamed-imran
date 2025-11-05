@@ -221,16 +221,18 @@ const DynamicContactForm = () => {
               <FormLabel>What brings you here? *</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger className="bg-background/50 w-full">
+                  <SelectTrigger className="bg-background/50 w-full h-10!">
                     <SelectValue placeholder="Select a purpose" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="hiring">Hiring as Employee</SelectItem>
-                  <SelectItem value="freelance">
+                  <SelectItem value="hiring" className="h-10">
+                    Hiring as Employee
+                  </SelectItem>
+                  <SelectItem value="freelance" className="h-10">
                     Freelance Opportunity
                   </SelectItem>
-                  <SelectItem value="general">
+                  <SelectItem value="general" className="h-10">
                     Project / General Inquiry
                   </SelectItem>
                 </SelectContent>
@@ -293,7 +295,7 @@ const DynamicContactForm = () => {
                     <Checkbox
                       checked={field.value}
                       onCheckedChange={field.onChange}
-                      className="mt-1"
+                      className="mt-1 min-h-auto!"
                     />
                   </FormControl>
                   <FormLabel className="text-sm cursor-pointer">

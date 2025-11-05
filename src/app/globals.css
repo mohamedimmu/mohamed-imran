@@ -280,15 +280,22 @@
   body {
     @apply bg-background text-foreground min-w-[300px];
   }
+
+  input,
+  select,
+  option {
+    @apply min-h-10;
+  }
 }
 
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 @layer utilities {
-  .animated-theme-toggler-icon svg{
-    @apply h-4! w-4!
+  .animated-theme-toggler-icon svg {
+    @apply h-4! w-4!;
   }
 }
 
@@ -296,5 +303,5 @@
   /* 320px */
   --breakpoint-xxs: 20rem;
   /* 480px */
-  --breakpoint-xs: 30rem; 
+  --breakpoint-xs: 30rem;
 }

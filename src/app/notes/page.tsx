@@ -2,6 +2,7 @@ import { PenTool, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import NotesIcon from "./NotesIcon";
+import GetNotifiedModal from "./GetNotifiedModal";
 
 export default function NotesPage() {
   return (
@@ -24,7 +25,7 @@ export default function NotesPage() {
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-primary">
               <PenTool className="w-6 h-6" />
-              <h2 className="text-2xl font-bold text-foreground">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground">
                 Coming Soon
               </h2>
             </div>
@@ -40,34 +41,25 @@ export default function NotesPage() {
               <h3 className="font-semibold text-base sm:text-lg flex items-center gap-2">
                 <span className="text-primary">→</span> Technical Articles
               </h3>
-              <p className="text-muted-foreground text-sm">
-                Deep dives into code, architecture, and problem-solving
-                approaches
-              </p>
+              <p className="text-muted-foreground text-sm sm:text-base">Deep dives into code, architecture, and problem-solving approaches</p>
             </div>
             <div className="space-y-2">
               <h3 className="font-semibold text-base sm:text-lg flex items-center gap-2">
                 <span className="text-primary">→</span> Project Stories
               </h3>
-              <p className="text-muted-foreground text-sm">
-                Behind-the-scenes look at projects, challenges, and solutions
-              </p>
+              <p className="text-muted-foreground text-sm sm:text-base">Behind-the-scenes look at projects, challenges, and solutions</p>
             </div>
             <div className="space-y-2">
               <h3 className="font-semibold text-base sm:text-lg flex items-center gap-2">
                 <span className="text-primary">→</span> Learning Notes
               </h3>
-              <p className="text-muted-foreground text-sm">
-                Key takeaways from courses, books, and real-world experiences
-              </p>
+              <p className="text-muted-foreground text-sm sm:text-base">Key takeaways from courses, books, and real-world experiences</p>
             </div>
             <div className="space-y-2">
               <h3 className="font-semibold text-base sm:text-lg flex items-center gap-2">
                 <span className="text-primary">→</span> Industry Insights
               </h3>
-              <p className="text-muted-foreground text-sm">
-                Thoughts on trends, tools, and the evolving tech landscape
-              </p>
+              <p className="text-muted-foreground text-sm sm:text-base">Thoughts on trends, tools, and the evolving tech landscape</p>
             </div>
           </div>
 
@@ -82,16 +74,9 @@ export default function NotesPage() {
 
       {/* CTA Section */}
       <div className="text-center space-y-6 animate-slide-up delay-400">
-        <p className="text-foreground/80">
-          Want to be notified when I publish my first note?
-        </p>
+        <p className="text-foreground/80">Want to be notified when I publish my first note?</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/contact">
-            <Button size="lg" className="gap-2 w-full sm:w-auto">
-              <PenTool className="w-4 h-4" />
-              Get Notified
-            </Button>
-          </Link>
+          <GetNotifiedModal />
           <Link href="/">
             <Button
               variant="outline"
@@ -107,3 +92,4 @@ export default function NotesPage() {
     </div>
   );
 }
+

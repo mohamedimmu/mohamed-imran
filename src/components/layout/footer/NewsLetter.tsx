@@ -97,6 +97,8 @@ export default function Newsletter() {
 
         <Button
           type="submit"
+          variant="default"
+          size="lg"
           disabled={isSubmitting}
           className="px-8"
           aria-live="polite"
