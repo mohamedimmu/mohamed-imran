@@ -11,16 +11,32 @@ export default function NavMenu() {
   const pathname = usePathname();
 
   const navLinks = [
-    { name: "Work", href: "/work", icon: <Briefcase size={16} /> },
-    { name: "About", href: "/about", icon: <User size={16} /> },
-    { name: "Notes", href: "/notes", icon: <NotebookPen size={16} /> },
-    { name: "Contact", href: "/contact", icon: <Mail size={16} /> },
+    {
+      name: "Work",
+      href: "/work",
+      icon: <Briefcase className="sm:w-4 sm:h-4 w-5 h-5" />,
+    },
+    {
+      name: "About",
+      href: "/about",
+      icon: <User className="sm:w-4 sm:h-4 w-5 h-5" />,
+    },
+    {
+      name: "Notes",
+      href: "/notes",
+      icon: <NotebookPen className="sm:w-4 sm:h-4 w-5 h-5" />,
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+      icon: <Mail className="sm:w-4 sm:h-4 w-5 h-5" />,
+    },
   ];
 
   const homeActive = pathname === "/";
 
   return (
-    <div className="flex items-center justify-center fixed bottom-4 left-1/2 -translate-x-1/2 z-50 sm:static sm:bottom-auto sm:left-auto sm:translate-x-0 sm:z-auto">
+    <div className="flex items-center justify-center">
       <ul
         className="
           flex flex-row items-center justify-center gap-2 xs:gap-4 px-2 xs:px-4 py-1 xs:py-2 rounded-full shadow-sm backdrop-blur-md border border-input bg-secondary/80"
@@ -40,7 +56,7 @@ export default function NavMenu() {
             asChild
           >
             <Link href="/">
-              <Home className="h-4 w-4" />
+              <Home className="w-5 h-5" />
             </Link>
           </Button>
 

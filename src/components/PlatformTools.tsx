@@ -69,7 +69,7 @@ export default function PlatformTools() {
 
       <div className="flex justify-center" aria-label="Technology partners">
         <div
-          className="max-w-4xl h-24 relative block"
+          className="max-w-4xl w-full h-24 relative block overflow-hidden"
           aria-hidden={false}
         >
           {/* If LogoLoop expects only nodes, pass techLogos.map(t => t.node) */}
@@ -82,6 +82,7 @@ export default function PlatformTools() {
             pauseOnHover={true}
             scaleOnHover={true}
             ariaLabel="Technology partners"
+            className="overflow-hidden"
           />
         </div>
       </div>
