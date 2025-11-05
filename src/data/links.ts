@@ -1,4 +1,5 @@
-import { Github, Linkedin } from "lucide-react";
+import { GITHUB_URL, LINKEDIN_URL, WHATSAPP_URL } from "@/lib/constants";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export const quickLinks = [
   { label: "Home", href: "/" },
@@ -8,6 +9,7 @@ export const quickLinks = [
 ];
 
 export const socialLinks = [
-  { label: "GitHub", href: "https://github.com", icon: Github },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
+  { label: "GitHub", href: GITHUB_URL, icon: FaGithub },
+  { label: "LinkedIn", href: LINKEDIN_URL, icon: FaLinkedin },
+  { label: "Whatsapp", href: WHATSAPP_URL, icon: FaWhatsapp },
 ];

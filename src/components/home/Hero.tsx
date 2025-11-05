@@ -1,6 +1,8 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "../ui/button";
 import StatusBadge from "../StatusBadge";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { EMAIL_ID, GITHUB_URL, LINKEDIN_URL } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -9,8 +11,8 @@ export default function Hero() {
       className="relative min-h-[calc(100vh-96px)] flex items-center justify-center overflow-y-auto"
     >
       <div className="max-w-7xl mx-auto px-4 py-12 relative">
-        <div className="max-w-4xl mx-auto text-center animate-slide-up">
-          <StatusBadge status="available" className="mb-8" />
+        <div className="max-w-4xl mx-auto text-center">
+          <StatusBadge status="available" className="mb-6" />
 
           <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto mb-2">
             👋 Hi, I&apos;m Mohamed Imran
@@ -20,43 +22,50 @@ export default function Hero() {
             Full Stack Developer <br /> & AI Engineer
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto my-6">
+          <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto mt-6 mb-12">
             I design and build modern, scalable digital products that help
             startups and enterprises transform complex challenges into seamless
             solutions.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button size="lg" className="gap-2 glow-primary w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              size="lg"
+              className="gap-2 glow-primary w-full sm:w-auto cursor-pointer"
+            >
               View My Work <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto">
+            <Button
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto cursor-pointer border-2"
+            >
               Let&apos;s Connect
             </Button>
           </div>
 
-          <div className="flex items-center justify-center gap-4 pt-8">
+          <div className="flex items-center justify-center gap-4 mt-6">
             <a
-              href="https://github.com"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 glass-card rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+              className="flex items-center gap-2 text-sm text-primary p-2 border-2 transition-colors rounded-full hover:bg-primary hover:text-primary-foreground duration-500 ease-in-out cursor-pointer"
             >
-              <Github className="h-5 w-5" />
+              <FaGithub className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 glass-card rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+              className="flex items-center gap-2 text-sm text-primary p-2 border-2 transition-colors rounded-full hover:bg-primary hover:text-primary-foreground duration-500 ease-in-out cursor-pointer"
             >
-              <Linkedin className="h-5 w-5" />
+              <FaLinkedin className="h-6 w-6" />
             </a>
             <a
-              href="mailto:contact@example.com"
-              className="p-3 glass-card rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+              href={`mailto:${EMAIL_ID}`}
+              className="flex items-center gap-2 text-sm text-primary p-2 border-2 transition-colors rounded-full hover:bg-primary hover:text-primary-foreground duration-500 ease-in-out cursor-pointer"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="h-6 w-6" />
             </a>
           </div>
         </div>

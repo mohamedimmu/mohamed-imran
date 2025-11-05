@@ -16,11 +16,11 @@ export default function SocialInfo() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-sm text-primary p-2 border-2 transition-colors rounded-full hover:bg-primary hover:text-primary-foreground duration-300 ease-in-out"
               aria-label={social.label}
             >
-              <Icon className="h-4 w-4" />
-              <span>{social.label}</span>
+              <Icon className="h-6 w-6" />
+              {/* <span>{social.label}</span> */}
             </a>
           );
         })}

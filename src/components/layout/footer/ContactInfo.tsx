@@ -1,3 +1,4 @@
+import { EMAIL_ID, PHONE_NUMBER } from "@/lib/constants";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactInfo() {
@@ -14,7 +15,7 @@ export default function ContactInfo() {
           rel="noopener noreferrer"
         >
           <Mail className="h-4 w-4 mt-0.5" />
-          <span>mohamedimran1130@gmail.com</span>
+          <span>{EMAIL_ID}</span>
         </a>
         <a
           className="flex items-start gap-3 text-sm text-secondary-foreground hover:text-primary transition-colors"
@@ -23,7 +24,7 @@ export default function ContactInfo() {
           rel="noopener noreferrer"
         >
           <Phone className="h-4 w-4 mt-0.5" />
-          <span className="">+91 - 8838121213</span>
+          <span className="">+91 - ${PHONE_NUMBER}</span>
         </a>
         <div className="flex items-start gap-3 text-sm">
           <MapPin className="h-4 w-4 mt-0.5 text-secondary-foreground" />
