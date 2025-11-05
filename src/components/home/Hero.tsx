@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import StatusBadge from "../StatusBadge";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { EMAIL_ID, GITHUB_URL, LINKEDIN_URL } from "@/lib/constants";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -32,19 +33,25 @@ export default function Hero() {
             <Button
               size="lg"
               className="gap-2 glow-primary w-full sm:w-auto cursor-pointer"
+              asChild
             >
-              View My Work <ArrowRight className="h-4 w-4" />
+              <Link href="/work">
+                View My Work <ArrowRight className="h-4 w-4" />
+              </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="w-full sm:w-auto cursor-pointer border-2"
+              asChild
             >
-              Let&apos;s Connect
+              <Link href="/contact">
+                Let&apos;s Connect
+              </Link>
             </Button>
           </div>
 
-          <div className="flex items-center justify-center gap-4 mt-6">
+          <div className="flex items-center justify-center gap-4 mt-8">
             <a
               href={GITHUB_URL}
               target="_blank"

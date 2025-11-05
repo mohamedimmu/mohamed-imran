@@ -22,6 +22,20 @@ export default function QuickLinks() {
             </Link>
           </li>
         ))}
+        <li key="view-cv">
+          <a
+            href="https://flowcv.com/resume/vddrok000n"
+            className="text-sm text-secondary-foreground hover:text-primary transition-colors inline-flex items-center gap-2 group"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View CV"
+          >
+            View CV
+            <span className="opacity-0 group-hover:opacity-100 transition-opacity">
+              →
+            </span>
+          </a>
+        </li>
       </ul>
     </div>
   );
