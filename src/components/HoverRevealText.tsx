@@ -25,49 +25,37 @@ export default function HoverRevealText({
 }: HoverRevealTextProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [state, setState] = useState<"initial" | "full">(defaultState);
-  console.log(state);
+
+  const updateSpans = useCallback((isRevealed: boolean) => {
+    if (!ref.current) return;
+    const spans = ref.current.querySelectorAll<HTMLSpanElement>('[data-rest="true"]');
+    spans.forEach((el, i) => {
+      el.style.width = isRevealed ? el.scrollWidth + "px" : "0px";
+      el.style.opacity = isRevealed ? "1" : "0";
+      el.style.transitionDelay = `${i * restDelayStepMs}ms`;
+    });
+  }, [restDelayStepMs]);
 
   const reveal = useCallback(() => {
-    if (!ref.current) return;
-    const spans =
-      ref.current.querySelectorAll<HTMLSpanElement>('[data-rest="true"]');
-    spans.forEach((el, i) => {
-      el.style.width = el.scrollWidth + "px";
-      el.style.opacity = "1";
-      el.style.transitionDelay = `${i * restDelayStepMs}ms`;
-    });
-    setState((prevState) => {
-      if (prevState !== "full") {
-        onStateChange?.("full");
-        return "full";
-      }
-      return prevState;
-    });
-  }, [restDelayStepMs, onStateChange]);
+    setState("full");
+  }, []);
 
   const hide = useCallback(() => {
-    if (!ref.current) return;
-    const spans =
-      ref.current.querySelectorAll<HTMLSpanElement>('[data-rest="true"]');
-    spans.forEach((el, i) => {
-      el.style.width = "0px";
-      el.style.opacity = "0";
-      el.style.transitionDelay = `${i * restDelayStepMs}ms`;
-    });
-    setState((prevState) => {
-      if (prevState !== "initial") {
-        onStateChange?.("initial");
-        return "initial";
-      }
-      return prevState;
-    });
-  }, [restDelayStepMs, onStateChange]);
+    setState("initial");
+  }, []);
 
-  // Apply defaultState on mount
   useEffect(() => {
-    if (defaultState === "full") reveal();
-    else hide();
-  }, [defaultState, reveal, hide]);
+    updateSpans(state === "full");
+    if (onStateChange) {
+      onStateChange(state);
+    }
+  }, [state, updateSpans, onStateChange]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      updateSpans(state === "full");
+    }
+  }, [state, updateSpans]);
 
   const Wrapper = tag as React.ElementType;
 

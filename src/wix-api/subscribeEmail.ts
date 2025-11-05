@@ -16,8 +16,6 @@ export async function subscribeEmail(email: string) {
     const response = await wixClient.emailSubscriptions.upsertEmailSubscription(
       options
     );
-    console.log(response, "error");
-    console.log("Successfully subscribed email:", response.subscription?.email);
     return response;
   } catch (error) {
     console.error("Error subscribing email:", error);

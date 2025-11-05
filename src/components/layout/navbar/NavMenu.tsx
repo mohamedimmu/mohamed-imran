@@ -18,7 +18,6 @@ export default function NavMenu() {
   ];
 
   const homeActive = pathname === "/";
-  console.log(homeActive);
 
   return (
     <div className="flex items-center justify-center fixed bottom-4 left-1/2 -translate-x-1/2 z-50 sm:static sm:bottom-auto sm:left-auto sm:translate-x-0 sm:z-auto">

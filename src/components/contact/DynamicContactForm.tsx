@@ -133,8 +133,6 @@ const DynamicContactForm = () => {
             ...(deliverables ? { deliverables } : {}),
             ...(message ? { message } : {}),
           };
-    console.log(formData);
-    console.log(formId);
     try {
       const response = await saveFormData(formId, formData);
       if (response.success) {
