@@ -18,17 +18,13 @@ export default function NavMenu() {
   ];
 
   const homeActive = pathname === "/";
+  console.log(homeActive);
 
   return (
-    <div className="hidden sm:flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <ul
         className="
-          flex flex-row items-center justify-center gap-4
-          bg-neutral-100/80 dark:bg-neutral-900/80
-          px-3 py-2 rounded-full shadow-sm backdrop-blur-md
-          border border-neutral-200/60 dark:border-neutral-800/60
-          font-content
-        "
+          flex flex-row items-center justify-center gap-2 xs:gap-4 px-2 xs:px-4 py-1 xs:py-2 rounded-full shadow-sm backdrop-blur-md border border-input bg-secondary/80"
       >
         {/* Home icon button */}
         <li className="flex items-center">
@@ -36,11 +32,11 @@ export default function NavMenu() {
             variant="outline"
             size="icon"
             aria-label="Home"
-            className={`rounded-full transition-all duration-300
+            className={`rounded-full transition-all duration-300 p-2! text-primary/80 hover:text-primary
               ${
                 homeActive
-                  ? "bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 shadow-sm"
-                  : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                  ? "bg-primary-foreground shadow-sm"
+                  : "bg-transparent border-0 shadow-none"
               }`}
             asChild
           >
@@ -52,7 +48,7 @@ export default function NavMenu() {
           {/* <Separator orientation="vertical" className="h-6 w-2 bg-red-600 flex" /> */}
           <Separator
             orientation="vertical"
-            className="ml-4 w-2 h-6! bg-neutral-300 dark:bg-neutral-700"
+            className="ml-2 xs:ml-4 w-2 h-6! bg-primary/15"
           />
         </li>
 
@@ -65,17 +61,17 @@ export default function NavMenu() {
               <Link
                 href={link.href}
                 className={`
-                  inline-flex items-center gap-2 px-2 py-1 text-sm font-medium rounded-full
-                  transition-all duration-300
+                  inline-flex items-center gap-2 p-2 sm:px-2.5 sm:py-1.5 text-sm font-medium rounded-full
+                  transition-all duration-300 text-primary/80 hover:text-primary border
                   ${
                     isActive
-                      ? "bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 shadow-sm"
-                      : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                      ? "bg-primary-foreground shadow-sm"
+                      : "bg-transparent shadow-none border-0"
                   }
                 `}
               >
                 {link.icon}
-                <span>{link.name}</span>
+                <span className="hidden sm:block">{link.name}</span>
               </Link>
             </li>
           );
@@ -85,9 +81,9 @@ export default function NavMenu() {
         <li className="flex items-center">
           <Separator
             orientation="vertical"
-            className="mr-4 w-2 h-6! bg-neutral-300 dark:bg-neutral-700"
+            className="mr-2 xs:mr-4 w-2 h-6! bg-primary/15"
           />
-          <AnimatedThemeToggler className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white animated-theme-toggler-icon cursor-pointer" />
+          <AnimatedThemeToggler className=" text-primary/80 hover:text-primary animated-theme-toggler-icon cursor-pointer p-2" />
         </li>
       </ul>
     </div>

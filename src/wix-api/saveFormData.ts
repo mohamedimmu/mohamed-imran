@@ -4,11 +4,11 @@ import { getWixAdminClient } from "@/lib/wix-client-admin";
 
 export async function saveFormData(
   formId: string,
-  formData: Record<string, string | number>
+  formData: Record<string, string | number | Date | boolean>
 ) {
+  console.log(formId, formData);
   const wixClient = getWixAdminClient();
   try {
-    console.log(formId, formData);
     const savedItem = await wixClient.items.save(formId, formData);
     return {
       success: true,

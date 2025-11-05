@@ -101,8 +101,8 @@ const DynamicContactForm = () => {
       purpose === "general"
         ? "General"
         : purpose === "hiring"
-        ? "Hiring"
-        : "Freelance";
+        ? "HiringApplication"
+        : "FreelanceProject";
 
     const formData: Record<string, string> =
       data.purpose === "general"
@@ -133,7 +133,8 @@ const DynamicContactForm = () => {
             ...(deliverables ? { deliverables } : {}),
             ...(message ? { message } : {}),
           };
-
+    console.log(formData);
+    console.log(formId);
     try {
       const response = await saveFormData(formId, formData);
       if (response.success) {
@@ -142,7 +143,26 @@ const DynamicContactForm = () => {
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
-      form.reset();
+      // form.reset({
+      //   name: "",
+      //   email: "",
+      //   company: "",
+      //   positionTitle: "",
+      //   jobDescription: "",
+      //   employmentType: "",
+      //   salaryRange: "",
+      //   startDate: "",
+      //   projectTitle: "",
+      //   projectDescription: "",
+      //   budget: "",
+      //   timeline: "",
+      //   deliverables: "",
+      //   message: "",
+      //   consent: false,
+      //   honeypot: "",
+      //   // Keep the current purpose value
+      //   purpose: form.getValues("purpose"),
+      // });
     }
   };
 
