@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { Button } from "../ui/button";
 import StatusBadge from "../StatusBadge";
 import { FaGithub, FaLinkedin } from "react-icons/fa";

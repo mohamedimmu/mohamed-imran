@@ -13,7 +13,7 @@ const experience = [
   },
   {
     role: "Software Engineer",
-    company: "MSys Technologies",
+    company: "Aziro Technologies",
     period: "Dec 2021 - Feb 2024",
     location: "Chennai, India",
     points: [
@@ -28,8 +28,10 @@ export default function Experience() {
     <section id="experience" className="max-w-7xl mx-auto px-4 py-12 relative">
       <div>
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-2">
-          <h2 className="text-4xl font-bold mb-2">Professional Experience</h2>
-          <p className="text-lg text-secondary-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+            Professional Experience
+          </h2>
+          <p className="text-base md:text-lg text-secondary-foreground">
             The professional journey that shaped my expertise in full-stack
             development
           </p>
@@ -39,29 +41,29 @@ export default function Experience() {
           {experience.map((exp, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl hover:scale-[1.02] transition-all duration-300"
+              className="p-4 rounded-2xl hover:scale-[1.02] transition-all duration-300"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex flex-col md:flex-row items-start gap-4">
                 <div className="p-3 bg-secondary rounded-lg">
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-                    <h3 className="text-xl font-semibold">
-                      {exp.role},{" "}
+                    <h3 className="text-lg sm:text-xl font-semibold">
+                      {exp.role}
                       <span className="text-primary">{exp.company}</span>
                     </h3>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-sm md:text-base text-secondary-foreground">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-muted-foreground font-medium mb-4">
+                  <p className="text-muted-foreground text-sm md:text-base font-medium mb-4">
                     {exp.location}
                   </p>
                   {/* <p className="text-base text-secondary-foreground mb-2">
                     {exp.description}
                   </p> */}
-                  <ul className="list-disc pl-6 space-y-2 text-base text-secondary-foreground marker:text-primary">
+                  <ul className="list-disc pl-4 space-y-2 text-sm sm:text-base text-secondary-foreground marker:text-primary">
                     {exp.points.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}

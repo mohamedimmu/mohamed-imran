@@ -24,7 +24,7 @@ export default function ContactInfo() {
           rel="noopener noreferrer"
         >
           <Phone className="h-4 w-4 mt-0.5" />
-          <span className="">+91 - ${PHONE_NUMBER}</span>
+          <span className="">+91 - {PHONE_NUMBER}</span>
         </a>
         <div className="flex items-start gap-3 text-sm">
           <MapPin className="h-4 w-4 mt-0.5 text-secondary-foreground" />

@@ -7,7 +7,7 @@ export default function SocialInfo() {
       <h5 className="font-semibold mb-3 text-sm uppercase tracking-wider text-muted-foreground">
         Socials
       </h5>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 flex-wrap">
         {socialLinks.map((social) => {
           const Icon = social.icon;
           return (
@@ -19,7 +19,7 @@ export default function SocialInfo() {
               className="flex items-center gap-2 text-sm text-primary p-2 border-2 transition-colors rounded-full hover:bg-primary hover:text-primary-foreground duration-300 ease-in-out"
               aria-label={social.label}
             >
-              <Icon className="h-6 w-6" />
+              <Icon className="h-5 w-5" />
               {/* <span>{social.label}</span> */}
             </a>
           );

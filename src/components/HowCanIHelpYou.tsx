@@ -32,8 +32,8 @@ export default function HowCanIHelp() {
     <section id="experience" className="max-w-7xl mx-auto px-4 py-12 relative">
       <div>
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-2">
-          <h2 className="text-4xl font-bold mb-2">How Can I Help You?</h2>
-          <p className="text-lg text-secondary-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2">How Can I Help You?</h2>
+          <p className="text-base md:text-lg text-secondary-foreground">
             Whether you&apos;re starting fresh or scaling up, I&apos;m here to
             support your digital journey
           </p>
@@ -50,8 +50,8 @@ export default function HowCanIHelp() {
                 <div className="w-12 h-12 bg-secondary border-2 rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-secondary-foreground leading-relaxed">
+                <h3 className="text-lg sm:text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-sm sm:text-base text-secondary-foreground leading-relaxed">
                   {service.description}
                 </p>
               </div>

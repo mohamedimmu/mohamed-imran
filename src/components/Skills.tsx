@@ -54,8 +54,8 @@ export default function Skills() {
     <section id="skills" className="max-w-7xl mx-auto px-4 py-12 relative">
       <div>
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-2">
-          <h2 className="text-4xl font-bold mb-2">Technical Skills</h2>
-          <p className="text-lg text-secondary-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2">Technical Skills</h2>
+          <p className="text-base md:text-lg text-secondary-foreground">
             The tools and tech I use every day to bring ideas to life.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function Skills() {
                   <div className={`p-2 rounded-lg bg-secondary border-2`}>
                     <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-xl font-semibold">{category.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold">{category.title}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (

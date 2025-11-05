@@ -21,7 +21,7 @@ export default function NavMenu() {
   console.log(homeActive);
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center fixed bottom-4 left-1/2 -translate-x-1/2 z-50 sm:static sm:bottom-auto sm:left-auto sm:translate-x-0 sm:z-auto">
       <ul
         className="
           flex flex-row items-center justify-center gap-2 xs:gap-4 px-2 xs:px-4 py-1 xs:py-2 rounded-full shadow-sm backdrop-blur-md border border-input bg-secondary/80"

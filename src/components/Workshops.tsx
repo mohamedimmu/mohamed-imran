@@ -29,8 +29,8 @@ export default function Workshops() {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
       <div className="text-center max-w-3xl mx-auto mb-12 space-y-2">
-        <h2 className="text-4xl font-bold mb-2"> Workshop</h2>
-        <p className="text-lg text-secondary-foreground">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-2"> Workshop</h2>
+        <p className="text-base md:text-lg text-secondary-foreground">
           Trained{" "}
           <strong className="text-foreground">300+ business owners</strong> on
           leveraging digital tools, automation, and marketing strategies to
@@ -38,13 +38,13 @@ export default function Workshops() {
         </p>
       </div>
 
-      <div className="p-8 rounded-lg ">
+      <div className="rounded-lg mb-12">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="text-center p-6 rounded-lg border-2 shadow-sm">
             <div className="inline-flex items-center justify-center w-12 h-12 bg-secondary rounded-full mb-4">
               <Users className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="font-semibold mb-2">Digital Transformation</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-2">Digital Transformation</h3>
             <p className="text-sm text-muted-foreground">
               Helping businesses adopt modern tools and workflows
             </p>
@@ -53,7 +53,7 @@ export default function Workshops() {
             <div className="inline-flex items-center justify-center w-12 h-12 bg-secondary rounded-full mb-4">
               <Zap className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="font-semibold mb-2">Automation</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-2">Automation</h3>
             <p className="text-sm text-muted-foreground">
               Streamlining operations through smart automation
             </p>
@@ -62,7 +62,7 @@ export default function Workshops() {
             <div className="inline-flex items-center justify-center w-12 h-12 bg-secondary rounded-full mb-4">
               <TrendingUp className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="font-semibold mb-2">Growth Strategies</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-2">Growth Strategies</h3>
             <p className="text-sm text-muted-foreground">
               Implementing data-driven marketing and scaling tactics
             </p>

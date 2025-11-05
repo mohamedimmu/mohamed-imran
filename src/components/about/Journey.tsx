@@ -57,8 +57,8 @@ export default function Journey() {
     <section id="journey" className="max-w-7xl mx-auto px-4 py-12 relative">
       <div>
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
-          <h2 className="text-4xl font-bold mb-2">My Journey</h2>
-          <p className="text-lg text-secondary-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2">My Journey</h2>
+          <p className="text-base md:text-lg text-secondary-foreground">
             Every milestone tells a story of growth, passion, and purpose that
             shaped who I am.
           </p>

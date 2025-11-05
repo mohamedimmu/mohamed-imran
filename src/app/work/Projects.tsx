@@ -40,7 +40,7 @@ export default function Projects() {
   }
 
   return (
-    <div>
+    <div className="space-y-8 md:space-y-12"> {/* Added responsive vertical spacing */}
       <ProjectFilters
         query={query}
         setQuery={setQuery}
@@ -51,7 +51,7 @@ export default function Projects() {
         toggleTech={toggleTechFilter}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10"> {/* Added responsive gaps */}
         <AnimatePresence>
           {filteredProjects.map((p) => (
             <ProjectCard key={p.id} project={p} onSelect={setSelectedProject} />
@@ -60,9 +60,9 @@ export default function Projects() {
       </div>
 
       {filteredProjects.length === 0 && (
-        <div className="mt-16 text-center text-muted-foreground">
-          <h3 className="text-xl font-semibold">No projects found</h3>
-          <p className="mt-2">Try adjusting your search or filter criteria.</p>
+        <div className="mt-8 md:mt-12 text-center text-muted-foreground"> {/* Adjusted margin-top */}
+          <h3 className="text-lg md:text-xl font-semibold">No projects found</h3> {/* Adjusted text size */}
+          <p className="mt-2 text-base md:text-lg">Try adjusting your search or filter criteria.</p> {/* Adjusted text size */}
         </div>
       )}
 

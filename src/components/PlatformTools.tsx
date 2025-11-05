@@ -62,14 +62,14 @@ export default function PlatformTools() {
     <section className="max-w-7xl mx-auto p-4 py-12 relative">
       <div>
         <div className="text-center max-w-3xl mx-auto mb-8 space-y-2">
-          <h2 className="text-3xl font-bold mb-2">Platform & Tools I Use</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2">Platform & Tools I Use</h2>
          
         </div>
       </div>
 
       <div className="flex justify-center" aria-label="Technology partners">
         <div
-          className="max-w-4xl h-24 relative hidden md:block"
+          className="max-w-4xl h-24 relative block"
           aria-hidden={false}
         >
           {/* If LogoLoop expects only nodes, pass techLogos.map(t => t.node) */}

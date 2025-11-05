@@ -18,8 +18,8 @@ export default function AboutIntro() {
         </h1>
       </div>
 
-      <div className="grid md:grid-cols-5 gap-12 items-center">
-        <div className="relative w-full col-span-2 flex justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center text-center md:text-left">
+        <div className="relative w-full flex justify-center items-center col-span-1 md:col-span-2">
           <Image
             src="/images/imran.jpg"
             width={500}
@@ -29,11 +29,11 @@ export default function AboutIntro() {
           />
         </div>
 
-        <div className="space-y-6 text-left col-span-3">
+        <div className="space-y-6 col-span-1 md:col-span-3">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium">
             A Full Stack Developer based in Chennai, India.
           </h2>
-          <p className="text-foreground/80 text-base sm:text-lg">
+          <p className="text-secondary-foreground text-base sm:text-lg">
             Over past 5 years of experience working on B2B & B2C platforms, SaaS
             products, and internal tools. I built scalable web applications and
             integrated AI-driven solutions. I&apos;ve had the opportunity to
@@ -47,7 +47,7 @@ export default function AboutIntro() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 max-w-2xl mx-auto gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 max-w-2xl mx-auto gap-4">
         <div className="text-center p-4 border-2 rounded-lg">
           <div className="text-3xl font-bold text-primary">5+</div>
           <div className="text-sm text-foreground/80 mt-1">
