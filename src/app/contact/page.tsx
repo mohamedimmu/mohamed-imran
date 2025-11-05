@@ -2,6 +2,12 @@ import DynamicContactForm from "@/components/contact/DynamicContactForm";
 import ContactInfo from "@/components/layout/footer/ContactInfo";
 import SocialInfo from "@/components/layout/footer/SocialInfo";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Mohamed Imran",
+  description: "Let's connect! Whether you're looking to hire, collaborate on a project, or just want to say hello — I'd love to hear from you.",
+};
 
 export default function ContactPage() {
   return (

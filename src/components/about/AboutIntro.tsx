@@ -26,6 +26,7 @@ export default function AboutIntro() {
             height={500}
             alt="Mohamed Imran"
             className="relative rounded-t-full w-80 h-80 object-cover"
+            unoptimized
           />
         </div>
 

@@ -1,4 +1,10 @@
 import Projects from "./Projects";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work | Mohamed Imran",
+  description: "A curated collection of my projects, showcasing my expertise in full-stack development and AI engineering.",
+};
 
 export default function WorkPage() {
   return (

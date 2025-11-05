@@ -8,6 +8,12 @@ import PlatformTools from "@/components/PlatformTools";
 import Playlist from "@/components/Playlist";
 import Skills from "@/components/Skills";
 import Workshops from "@/components/Workshops";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | Mohamed Imran",
+  description: "Learn more about my journey, experience, skills, and what I'm passionate about.",
+};
 
 export default function AboutPage() {
   return (

@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "Mohamed Imran - Full-Stack Developer & AI Engineer",
   description:
     "Full Stack Developer and AI Engineer passionate about building intelligent digital products that simplify complex challenges.",
+  appleWebApp: {
+    title: "MI",
+  },
 };
 
 export default function RootLayout({

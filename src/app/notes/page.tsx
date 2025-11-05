@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import NotesIcon from "./NotesIcon";
 import GetNotifiedModal from "./GetNotifiedModal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Notes | Mohamed Imran",
+  description: "A digital notebook of thoughts, learnings, and insights on web development, AI, and more.",
+};
 
 export default function NotesPage() {
   return (
